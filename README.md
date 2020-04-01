@@ -2,6 +2,13 @@
 
 Combines names in separate columns (John, Jane, Doe) and appends a new column to the spreadsheet containing "John and Jane Doe".
 
+## Installation
+
+1. Install `openpyxl`
+    ```bash
+    pip3 install openpyxl
+    ```
+
 ## Usage
 
 1. Edit the input file and header columns to match your spreadsheet, and the output file to whatever you want:
