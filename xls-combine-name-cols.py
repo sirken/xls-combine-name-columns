@@ -40,15 +40,11 @@ for row_cells in ws.iter_rows(min_row=1, max_row=1):
                 item[1] = True
                 item[2] = pos
 
-# Verify headers exist
-header_check = True
-for item in xls_headers:
-    if item[1] == False:
-        header_check = False
-        print(f"Missing header: {item[0]}")
-# If any headers were not found, quit
-if header_check == False:
-        raise SystemExit()
+# Check for any missing headers
+if False in [i[1] for i in xls_headers]:
+    for item in [i[0] for i in xls_headers if i[1] == False]:
+        print(f"Missing header: {item}")
+    raise SystemExit()
 
 
 print("Combining names...")
